@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <h1>Hospital Management System</h1>
+
+    <!-- Hospital Selection -->
+    <label for="hospitalSelect">Select Hospital:</label>
+    <select id="hospitalSelect" onchange="updateDoctors()">
+        <option value="hospital1">Hospital 1</option>
+        <option value="hospital2">Hospital 2</option>
+        <option value="hospital3">Hospital 3</option>
+    </select>
+
+    <!-- Doctor Selection -->
+    <label for="doctorSelect">Select Doctor:</label>
+    <select id="doctorSelect">
+        <option value="" disabled selected>Select a doctor</option>
+    </select>
+
+    <!-- Appointment Details -->
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" placeholder="Enter patient's name">
+
+    <label for="patientAge">Patient Age:</label>
+    <input type="number" id="patientAge" placeholder="Enter patient's age">
+
+    <label for="patientGender">Patient Gender:</label>
+    <select id="patientGender">
+        <option value="" disabled selected>Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="appointmentType">Appointment Type:</label>
+    <select id="appointmentType">
+        <option value="General">General</option>
+        <option value="Emergency">Emergency</option>
+        <option value="Follow-up">Follow-up</option>
+    </select>
+
+    <label for="appointmentDate">Appointment Date:</label>
+    <input type="date" id="appointmentDate" onchange="updateTimeSlots()">
+
+    <label for="appointmentTime">Select Appointment Time:</label>
+    <select id="appointmentTime">
+        <option value="" disabled selected>Select a time slot</option>
+    </select>
+
+    <button onclick="bookAppointment()">Book Appointment</button>
+
+    <div class="message" id="appointmentStatus"></div>
+
+    <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
